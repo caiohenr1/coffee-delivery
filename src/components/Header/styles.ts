@@ -18,9 +18,7 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
   }
-
 `
-
 export const HeaderButtonsContainer = styled.div`
   display: flex;
   align-items: center;
