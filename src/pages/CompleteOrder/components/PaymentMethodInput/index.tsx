@@ -8,8 +8,7 @@ interface PaymentMethodInputProps {
 export const PaymentMethodInput = ( { icon, info }: PaymentMethodInputProps) => {
   return (
     <PaymentMethodContainer>
-      {icon}
-      {info}
+      {icon}{info}
     </PaymentMethodContainer>
   )
 }
