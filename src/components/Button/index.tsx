@@ -1,9 +1,14 @@
+import { ButtonHTMLAttributes } from "react"
 import { ButtonContainer } from "./styles"
 
-export const Button = () => {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string | number
+}
+
+export const Button = ( { text, ...props }: ButtonProps) => {
   return (
-    <ButtonContainer >
-      CONFIRMAR PEDIDO
+    <ButtonContainer {...props} >
+      {text}
     </ButtonContainer>
   )
 }

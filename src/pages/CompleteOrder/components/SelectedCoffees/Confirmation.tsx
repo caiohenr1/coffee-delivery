@@ -29,7 +29,7 @@ export const Confirmation = ( ) => {
             R$ 33,50
         </RegularText>
       </div>
-      <Button />
+      <Button text='CONFIRMAR PEDIDO' />
     </ConfirmationContainer>
   )
 }
