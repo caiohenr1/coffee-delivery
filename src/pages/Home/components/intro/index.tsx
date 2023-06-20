@@ -4,8 +4,7 @@ import { RegularText } from "../../../../components/Typography/Typography"
 import { InfoIcon } from "../../../../components/InfoIcon"
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 import { useTheme } from "styled-components"
-import { defaultTheme } from "../../../../styles/themes/default"
-import { Coffes } from "../Coffes"
+
 export const Intro = ( ) => {
 
   const { colors } = useTheme()

@@ -24,5 +24,4 @@ export const ConfirmationContainer = styled.section`
     align-items: center;
     justify-content: space-between;
   }
-
 `
