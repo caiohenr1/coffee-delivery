@@ -41,7 +41,7 @@ export const Confirmation = ( ) => {
             R$ {formattedTotalPrice}
         </RegularText>
       </div>
-      <Button text='CONFIRMAR PEDIDO' disabled={cartQuantity <= 0} />
+      <Button text='CONFIRMAR PEDIDO' disabled={cartQuantity <= 0} type="submit"/>
     </ConfirmationContainer>
   )
 }
