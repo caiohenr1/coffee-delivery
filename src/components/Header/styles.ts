@@ -42,6 +42,23 @@ export const HeaderBaseButton = styled.button<HeaderButtonProps>`
   position: relative;
   font-size: ${props => props.theme.textSizes["text-regular-s"]};
 
+  span {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
+    color: ${props => props.theme.colors["base-white"]};
+    font-size: 0.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: ${props => props.theme.colors["brand-yellow-dark"]};
+  }
+
   /* location button */
   ${ ({ variant, theme }) =>  variant === 'purple' && css`
      background: ${theme.colors[`brand-${variant}-light`]};

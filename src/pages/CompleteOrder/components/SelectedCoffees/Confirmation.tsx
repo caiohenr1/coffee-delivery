@@ -1,8 +1,20 @@
 import { Button } from "../../../../components/Button"
 import { RegularText } from "../../../../components/Typography/Typography"
+import { useCart } from "../../../../hooks/useCart"
+import { formatMoney } from "../../../../utils/formatMoney"
 import { ConfirmationContainer } from "./styles"
 
+const DELIVERY_PRICE = 3.5
+
 export const Confirmation = ( ) => {
+  const { cartItemsTotal, cartQuantity } = useCart()
+  
+  const cartTotalPrice = cartItemsTotal + DELIVERY_PRICE
+
+  const formattedItemsCart = formatMoney(cartItemsTotal)
+  const formattedTotalPrice = formatMoney(cartTotalPrice)
+  const formattedDeliveryPrice = formatMoney(DELIVERY_PRICE)
+
   return (
     <ConfirmationContainer>
       <div>
@@ -10,7 +22,7 @@ export const Confirmation = ( ) => {
             Total de itens
         </RegularText>
         <RegularText>
-            R$ 9,90
+            R$ {formattedItemsCart}
         </RegularText>
       </div>
       <div>
@@ -18,7 +30,7 @@ export const Confirmation = ( ) => {
             Entrega
         </RegularText>
         <RegularText>
-            R$ 3,50
+            R$ {formattedDeliveryPrice}
         </RegularText>
       </div>
       <div>
@@ -26,10 +38,10 @@ export const Confirmation = ( ) => {
             Total
         </RegularText>
         <RegularText size="l" color="subtitle" weight={700}>
-            R$ 33,50
+            R$ {formattedTotalPrice}
         </RegularText>
       </div>
-      <Button text='CONFIRMAR PEDIDO' />
+      <Button text='CONFIRMAR PEDIDO' disabled={cartQuantity <= 0} />
     </ConfirmationContainer>
   )
 }
